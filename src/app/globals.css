@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/* ===== THEME COLORS: change these to re-theme the whole site ===== */
+:root {
+  --brand-navy: #071b2c;
+  --brand-blue: #1677ff;
+  --brand-aqua: #48ddeb;
+  --brand-soft: #f4fafc;
+  --brand-ink: #102b40;
+
+  --glass-bg: rgba(255, 255, 255, 0.07);
+  --glass-border: rgba(255, 255, 255, 0.16);
+  --glass-blur: 18px;
+}
+
+/* Makes the colors available as Tailwind classes: bg-navy, text-aqua, etc. */
+@theme inline {
+  --color-navy: var(--brand-navy);
+  --color-blue: var(--brand-blue);
+  --color-aqua: var(--brand-aqua);
+  --color-soft: var(--brand-soft);
+  --color-ink: var(--brand-ink);
+
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-sora), system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem; /* keeps section titles clear of the sticky header */
+}
+
+body {
+  background-color: var(--brand-navy);
+  background-image:
+    radial-gradient(60rem 40rem at 85% -10%, rgba(22, 119, 255, 0.22), transparent 60%),
+    radial-gradient(50rem 35rem at -10% 30%, rgba(72, 221, 235, 0.12), transparent 60%);
+  background-attachment: fixed;
+  color: var(--brand-soft);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Space for the sticky mobile CALL / WHATSAPP bar */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 5rem;
+  }
+}
+
+/* Glass surface used by cards, header and buttons */
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+  box-shadow:
+    0 10px 40px -12px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+/* Aqua to blue gradient text */
+.text-water {
+  background-image: linear-gradient(90deg, var(--brand-aqua), var(--brand-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Respect users who turn off animations */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
