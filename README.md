@@ -1,157 +1,91 @@
-# TANKIWALLA — Premium Water Tank Cleaning Services
+# TANKIWALLA
 
-A modern, mobile-first business website for **TANKIWALLA**, a water tank cleaning service based in Indore, Madhya Pradesh, India.
+### Clean Tanks. Safer Water. Healthier Spaces.
 
-The website is designed to help residential, commercial, institutional and industrial customers understand the services and quickly contact the business.
+<p align="center">
+  <strong>A dedicated project repository for TANKIWALLA</strong><br/>
+  Water tank cleaning services · Indore, Madhya Pradesh, India
+</p>
 
-## Business Information
+<p align="center">
+  <img alt="Repository visibility" src="https://img.shields.io/badge/repository-private-7c3aed?style=for-the-badge" />
+  <img alt="Project status" src="https://img.shields.io/badge/status-initial%20setup-0ea5e9?style=for-the-badge" />
+  <img alt="Location" src="https://img.shields.io/badge/location-Indore%2C%20India-16a34a?style=for-the-badge" />
+</p>
 
-| Detail | Information |
+---
+
+## About TANKIWALLA
+
+**TANKIWALLA** is a water tank cleaning service business based in Indore, Madhya Pradesh. This repository is the private workspace for the business's digital presence and related website project.
+
+The goal is to create a clear, professional online experience where customers can learn about the services and get in touch easily.
+
+## Business details
+
+| | |
 |---|---|
-| Business | TANKIWALLA |
-| Location | Indore, Madhya Pradesh, India |
-| Phone / WhatsApp | +91 92441 04593 |
-| Email | tankiwalla@gmail.com |
+| **Business** | TANKIWALLA |
+| **Service area** | Indore, Madhya Pradesh, India |
+| **Call** | [+91 92441 04593](tel:+919244104593) |
+| **WhatsApp** | [Chat with TANKIWALLA](https://wa.me/919244104593) |
+| **Email** | [tankiwalla@gmail.com](mailto:tankiwalla@gmail.com) |
 
-## Website Goals
+## Services to be represented
 
-- Present TANKIWALLA as a professional, trustworthy service brand.
-- Make calling and WhatsApp enquiries easy, especially on mobile.
-- Showcase residential, commercial, institutional and industrial tank-cleaning services.
-- Display authentic before-and-after work photographs.
-- Collect service enquiries through a simple contact form.
-- Help local customers discover the business through search engines.
+- **Residential** — home, overhead and underground water tanks
+- **Commercial** — shops, offices and commercial properties
+- **Institutional** — schools, colleges and other institutions
+- **Industrial** — factories, companies and industrial facilities
 
-## Planned Technology
+*Service availability and specific requirements should be confirmed directly with the business.*
 
-The implementation is intended to use:
+## Project direction
 
-- **Next.js** with the App Router
-- **TypeScript**
-- **Tailwind CSS**
-- **Framer Motion** for restrained, accessible motion
-- **Lucide React** for icons
-- **Vercel** for deployment
+The planned website experience will focus on:
 
-Exact dependency versions will be selected during project setup and recorded in `package.json` and the lockfile.
+- A premium, distinctive visual identity inspired by clean water
+- A mobile-first layout that works well on phones, tablets and desktops
+- Clear service information and prominent call / WhatsApp actions
+- Authentic work photographs and properly labelled before-and-after galleries
+- A simple enquiry experience
+- Search-friendly page structure and accessible interactions
+- Fast loading, responsive images and purposeful motion
 
-## Getting Started
+## Repository status
 
-### Prerequisites
+This repository is currently being used as the **project's private starting point**. The website source code and implementation have not yet been added.
 
-Install the current compatible LTS version of Node.js and Git.
+- [x] Private GitHub repository created
+- [x] Project README added
+- [ ] Website source code added
+- [ ] Website content and genuine project photos added
+- [ ] Enquiry form configured and tested
+- [ ] SEO and accessibility checks completed
+- [ ] Public website deployment completed
 
-Check your installation:
+## Getting started
 
-```bash
-node --version
-npm --version
-git --version
-```
-
-### Clone the repository
+Clone the private repository:
 
 ```bash
 git clone https://github.com/rajvardhan-here/tankiwalla-website.git
 cd tankiwalla-website
 ```
 
-### Install dependencies and run locally
+When the website application is added, its exact installation and development commands will be documented here.
 
-Once the Next.js application and `package.json` have been added:
+## Privacy and contribution
 
-```bash
-npm install
-npm run dev
-```
+This repository is **private** and intended for the business owner and explicitly authorized collaborators. Do not share credentials, API keys, customer contact details or other private information in commits.
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-> This repository was initially created empty. The application source code still needs to be added before the install and run commands can work.
-
-## Contact & Conversion Features
-
-The website should provide:
-
-- Tap-to-call using `tel:+919244104593`
-- WhatsApp enquiries using [https://wa.me/919244104593](https://wa.me/919244104593)
-- Email contact using `mailto:tankiwalla@gmail.com`
-- Service-specific prefilled WhatsApp messages
-- A validated enquiry form with clear success and error states
-
-Form delivery must be connected to a real provider (for example, Web3Forms) and tested before launch. Never display a success message unless the provider confirms submission.
-
-## Content & Image Guidelines
-
-- Use authentic TANKIWALLA project photographs for actual work, before-and-after comparisons and testimonials.
-- Clearly treat generated or stock images as illustrative imagery; never present them as completed customer projects.
-- Do not publish invented reviews, ratings, customer counts, certifications, guarantees, government contracts or years of experience.
-- Keep image assets optimized (prefer WebP/AVIF where appropriate) and use responsive image sizes.
-
-Suggested asset location:
-
-```text
-public/
-  images/
-    hero/
-    about/
-    gallery/
-    services/
-    process/
-    reviews/
-    backgrounds/
-```
-
-## Configuration & Secrets
-
-- Keep business contact details in one centralized configuration module.
-- Store provider keys and other secrets in local environment variables.
-- Use `.env.local` for local development and configure production variables in the hosting dashboard.
-- Never commit `.env.local`, API keys, access tokens or credentials.
-- Provide an `.env.example` containing variable names and safe placeholder values only.
-
-## Design Principles
-
-- Mobile-first layouts, tested at common phone, tablet and desktop widths.
-- Premium water-inspired visual identity with strong text/background contrast.
-- Glass effects used selectively so content remains readable.
-- Smooth, purposeful animations with support for `prefers-reduced-motion`.
-- Fast loading, accessible controls and no horizontal overflow.
-
-## Deployment
-
-The intended hosting platform is Vercel.
-
-1. Import this private GitHub repository into Vercel.
-2. Configure the required environment variables in Vercel.
-3. Deploy the production branch.
-4. Test the live website, contact form, phone links and WhatsApp links.
-5. Connect a custom domain when ready.
-
-The GitHub repository can remain **private** while the deployed website is **public**.
-
-## Privacy & Security
-
-- Do not store customer enquiry data in public source files.
-- Collect only the information needed to respond to an enquiry.
-- Add a clear privacy notice before collecting personal information.
-- Validate form inputs and use appropriate spam protection.
-- Keep dependencies updated and review production build output.
-
-## Project Status
-
-**Status: Initial repository setup**
-
-- [x] Private GitHub repository created
-- [x] Project README added
-- [ ] Next.js application scaffold
-- [ ] Responsive website sections and animations
-- [ ] Contact form integration
-- [ ] SEO, accessibility and performance checks
-- [ ] Production deployment and domain setup
+Before publishing customer photographs, reviews or testimonials, obtain permission. Do not present stock or AI-generated imagery as real completed customer work, and do not publish unverified ratings, certifications, guarantees or business claims.
 
 ---
 
-**TANKIWALLA** — Clean Tanks. Safer Water. Healthier Spaces.
-
-For service enquiries: **+91 92441 04593** · **tankiwalla@gmail.com**
+<p align="center">
+  <strong>TANKIWALLA</strong><br/>
+  Clean Tanks. Safer Water. Healthier Spaces.<br/>
+  <a href="https://wa.me/919244104593">WhatsApp</a> ·
+  <a href="mailto:tankiwalla@gmail.com">Email</a>
+</p>
