@@ -68,6 +68,29 @@ body {
   color: transparent;
 }
 
+/* ===== Moving photo gallery ===== */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 45s linear infinite;
+}
+
+/* Pause while hovering, focusing, or pressing (touch) */
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track,
+.marquee:active .marquee-track {
+  animation-play-state: paused;
+}
+
 /* Respect users who turn off animations */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -79,5 +102,12 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+  /* The gallery becomes a normal swipeable row instead of moving by itself */
+  .marquee {
+    overflow-x: auto;
+  }
+  .marquee-track {
+    animation: none;
   }
 }
