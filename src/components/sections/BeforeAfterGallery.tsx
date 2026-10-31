@@ -20,14 +20,12 @@ function ComparisonSlider({ before, after, label }: ComparisonSliderProps) {
   const [position, setPosition] = useState(50);
 
   return (
-    <div className="glass rounded-3xl p-2">
-      <div className="relative aspect-[4/3] select-none overflow-hidden rounded-2xl focus-within:ring-2 focus-within:ring-aqua">
-        {/* After photo sits underneath */}
+    <div className="glass rounded-2xl p-1.5">
+      <div className="relative aspect-[16/10] select-none overflow-hidden rounded-xl focus-within:ring-2 focus-within:ring-aqua">
         <div className="absolute inset-0">
           <SiteImage image={after} sizes="(min-width: 768px) 50vw, 100vw" />
         </div>
 
-        {/* Before photo is revealed from the left */}
         <div
           className="absolute inset-0"
           style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
@@ -42,18 +40,16 @@ function ComparisonSlider({ before, after, label }: ComparisonSliderProps) {
           After
         </span>
 
-        {/* Divider line and handle */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-y-0 w-0.5 -translate-x-1/2 bg-white/90"
           style={{ left: `${position}%` }}
         >
-          <span className="absolute left-1/2 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-navy shadow-lg">
-            <ChevronsLeftRight size={20} />
+          <span className="absolute left-1/2 top-1/2 flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-navy shadow-lg">
+            <ChevronsLeftRight size={18} />
           </span>
         </div>
 
-        {/* Invisible slider: handles mouse, touch and keyboard */}
         <input
           type="range"
           min={0}
@@ -92,11 +88,11 @@ const toneStyles: Record<Tone, string> = {
 
 function GalleryTile({ image, label, tone }: Tile) {
   return (
-    <figure className="glass relative mr-4 h-64 w-72 shrink-0 overflow-hidden rounded-2xl sm:h-72 sm:w-96">
-      <SiteImage image={image} sizes="384px" />
+    <figure className="glass relative mr-3 h-44 w-60 shrink-0 overflow-hidden rounded-xl sm:h-52 sm:w-72">
+      <SiteImage image={image} sizes="288px" />
       <figcaption
         className={cn(
-          "absolute left-3 top-3 rounded-full px-3 py-1 text-xs font-semibold",
+          "absolute left-2.5 top-2.5 rounded-full px-2.5 py-0.5 text-xs font-semibold",
           toneStyles[tone]
         )}
       >
@@ -110,7 +106,7 @@ function GalleryTile({ image, label, tone }: Tile) {
 
 export function BeforeAfterGallery() {
   return (
-    <section id="our-work" aria-labelledby="work-heading" className="py-20 sm:py-28">
+    <section id="our-work" aria-labelledby="work-heading" className="py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Our Work"
@@ -119,17 +115,17 @@ export function BeforeAfterGallery() {
               See the <span className="text-water">difference</span>
             </span>
           }
-          description="Drag the slider to compare a tank before and after cleaning."
+          description="Slider ko drag karke tank ka before aur after compare karo."
         />
 
         {/* Remove this note once you replace the demonstration photos with your own work */}
         <Reveal>
-          <p className="mt-4 text-xs text-soft/50">
+          <p className="mt-3 text-xs text-soft/50">
             Photos shown are demonstration visuals, not completed customer projects.
           </p>
         </Reveal>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
           <Reveal>
             <ComparisonSlider
               before={images.gallery.before1}
@@ -147,9 +143,8 @@ export function BeforeAfterGallery() {
         </div>
       </div>
 
-      {/* Moving strip: pauses on hover or touch, swipeable if motion is reduced */}
       <div
-        className="marquee mt-12 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]"
+        className="marquee mt-8 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]"
         role="region"
         aria-label="Moving gallery of demonstration photographs"
         tabIndex={0}
@@ -160,7 +155,6 @@ export function BeforeAfterGallery() {
               <GalleryTile key={`a-${tile.image.src}`} {...tile} />
             ))}
           </div>
-          {/* Second copy makes the loop seamless */}
           <div className="flex" aria-hidden="true">
             {tiles.map((tile) => (
               <GalleryTile key={`b-${tile.image.src}`} {...tile} />

@@ -16,7 +16,7 @@ const serviceImages: Record<ServiceImageKey, ImageAsset[]> = {
 
 export function Services() {
   return (
-    <section id="services" aria-labelledby="services-heading" className="py-20 sm:py-28">
+    <section id="services" aria-labelledby="services-heading" className="py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Services"
@@ -25,19 +25,19 @@ export function Services() {
               Tank cleaning for <span className="text-water">every property</span>
             </span>
           }
-          description="Choose the service that fits your property, then message us on WhatsApp to get started."
+          description="Apni property ke hisaab se service chuno, phir WhatsApp par message karo."
         />
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {services.map((service, index) => {
             const pictures = serviceImages[service.image];
 
             return (
-              <Reveal key={service.id} delay={(index % 2) * 0.1}>
-                <article className="glass group flex h-full flex-col overflow-hidden rounded-3xl">
+              <Reveal key={service.id} delay={(index % 4) * 0.08} className="h-full">
+                <article className="glass group flex h-full flex-col overflow-hidden rounded-2xl">
                   <div
                     className={cn(
-                      "grid h-56 gap-1 sm:h-64",
+                      "grid h-36 gap-0.5",
                       pictures.length > 1 ? "grid-cols-2" : "grid-cols-1"
                     )}
                   >
@@ -45,40 +45,36 @@ export function Services() {
                       <div key={picture.src} className="relative overflow-hidden">
                         <SiteImage
                           image={picture}
-                          sizes="(min-width: 1280px) 600px, (min-width: 768px) 45vw, 100vw"
+                          sizes="(min-width: 1280px) 300px, (min-width: 640px) 45vw, 100vw"
                           className="object-cover transition duration-700 group-hover:scale-105"
                         />
                       </div>
                     ))}
                   </div>
 
-                  <div className="flex flex-1 flex-col p-6 sm:p-7">
-                    <span className="font-display text-sm font-semibold text-aqua">
-                      0{index + 1}
-                    </span>
-                    <h3 className="mt-2 font-display text-xl font-bold sm:text-2xl">
+                  <div className="flex flex-1 flex-col p-5">
+                    <h3 className="font-display text-base font-bold leading-snug">
                       {service.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-soft/75 sm:text-base">
+                    <p className="mt-2 text-sm leading-relaxed text-soft/75">
                       {service.description}
                     </p>
 
-                    <ul className="mt-5 flex flex-wrap gap-2">
+                    <ul className="mt-3 flex flex-wrap gap-1.5">
                       {service.points.map((point) => (
                         <li
                           key={point}
-                          className="rounded-full border border-white/15 px-3 py-1 text-xs text-soft/80"
+                          className="rounded-full border border-white/15 px-2.5 py-0.5 text-xs text-soft/80"
                         >
                           {point}
                         </li>
                       ))}
                     </ul>
 
-                    <div className="mt-auto pt-7">
+                    <div className="mt-auto pt-4">
                       <WhatsAppButton
-                        variant="primary"
                         message={serviceEnquiryMessage(service.title)}
-                        className="w-full sm:w-auto"
+                        className="w-full"
                       >
                         Enquire Now
                       </WhatsAppButton>

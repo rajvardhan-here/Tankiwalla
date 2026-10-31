@@ -27,7 +27,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 6rem; /* keeps section titles clear of the sticky header */
+  scroll-padding-top: 4.5rem; /* just enough to clear the sticky header */
 }
 
 body {
@@ -103,7 +103,6 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  /* The gallery becomes a normal swipeable row instead of moving by itself */
   .marquee {
     overflow-x: auto;
   }

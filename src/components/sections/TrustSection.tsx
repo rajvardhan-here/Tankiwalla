@@ -21,24 +21,24 @@ const points = [
   {
     icon: ThumbsUp,
     title: "Customer convenience",
-    text: "Reach us by call, WhatsApp or the contact form, whichever is easiest for you.",
+    text: "Reach us by call, WhatsApp or the contact form, whichever is easiest.",
   },
   {
     icon: Sparkles,
     title: "Hygiene-focused service",
-    text: "Our focus is cleaner water storage and safer water for everyone who uses it.",
+    text: "Our focus is cleaner water storage and safer water for everyone.",
   },
   {
     icon: CalendarCheck,
     title: "Easy booking",
-    text: "Get in touch, tell us what you need, and we will arrange a suitable time.",
+    text: "Get in touch, tell us what you need, and we arrange a suitable time.",
   },
 ];
 
 export function TrustSection() {
   return (
-    <section aria-labelledby="trust-heading" className="py-20 sm:py-28">
-      <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:gap-16">
+    <section aria-labelledby="trust-heading" className="py-12 sm:py-16">
+      <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-12 lg:gap-12">
         <div className="lg:col-span-4">
           <SectionHeading
             eyebrow="Why TANKIWALLA"
@@ -51,15 +51,17 @@ export function TrustSection() {
           />
         </div>
 
-        <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:col-span-8">
+        <div className="grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:col-span-8">
           {points.map((point, index) => (
-            <Reveal key={point.title} delay={(index % 2) * 0.1}>
-              <div className="border-t border-white/15 pt-6">
-                <span className="glass flex h-11 w-11 items-center justify-center rounded-full text-aqua">
-                  <point.icon size={20} aria-hidden="true" />
+            <Reveal key={point.title} delay={(index % 2) * 0.08}>
+              <div className="flex gap-3 border-t border-white/15 pt-4">
+                <span className="glass flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-aqua">
+                  <point.icon size={18} aria-hidden="true" />
                 </span>
-                <h3 className="mt-4 font-display text-lg font-semibold">{point.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-soft/70">{point.text}</p>
+                <div>
+                  <h3 className="font-display text-base font-semibold">{point.title}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-soft/70">{point.text}</p>
+                </div>
               </div>
             </Reveal>
           ))}
